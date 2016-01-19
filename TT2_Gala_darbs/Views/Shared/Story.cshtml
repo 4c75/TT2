@@ -1,0 +1,39 @@
+﻿
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+    function initialize() {
+
+        var myLatlng = new google.maps.LatLng(56.923941, 24.137227);
+
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+            center: new google.maps.LatLng(56.923941, 24.137227),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+
+        // Place a draggable marker on the map
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable: true,
+            title: "Drag me!"
+        });
+
+
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+@{
+    ViewBag.Title = "Story";
+}
+
+<h2>Story</h2>
+
+<div class="row">
+    <div><div id="map" style="height: 400px; width: 400px;"></div> </div>
+    <div><p> This is sample text </p></div>
+</div>

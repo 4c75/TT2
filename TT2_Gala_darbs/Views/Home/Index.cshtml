@@ -1,0 +1,17 @@
+﻿
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1> U just got home :)</h1>
+@model string
+<p> @Model </p>
+
+@{ 
+    if (Model == "U R Logged in") {
+        Html.RenderPartial("Story"); 
+    }
+        
+}
