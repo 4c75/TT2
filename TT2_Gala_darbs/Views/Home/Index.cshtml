@@ -4,14 +4,18 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<div class="page-header">
+    <h1> U just got home :)</h1>
+</div>
+    <p> Some text </p>
 
-<h1> U just got home :)</h1>
-@model string
-<p> @Model </p>
-
-@{ 
-    if (Model == "U R Logged in") {
-        Html.RenderPartial("Story"); 
+    @model List<TT2_Gala_darbs.Models.StoryModel>
+    @{
+        foreach (TT2_Gala_darbs.Models.StoryModel entity in Model)
+        {
+            Html.RenderPartial("EntityContent", entity);
+        }
     }
-        
-}
+
+

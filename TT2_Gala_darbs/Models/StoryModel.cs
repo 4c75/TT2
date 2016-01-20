@@ -19,7 +19,7 @@ namespace TT2_Gala_darbs.Models
         public string text { get; set; }
         public int likes { get; set; }
         public int id { get; set; }
-        public List<Tuple<decimal, decimal>> cords { get; set; }
+        public List<Cords> cord { get; set; }
         public List<string> following { get; set; }
 
         public StoryModel()
@@ -28,4 +28,13 @@ namespace TT2_Gala_darbs.Models
 
         }
     }
+
+
+    public class Cords
+    {
+        public decimal x { get; set; }
+        public decimal y { get; set; }
+        public int id { get; set; }
+    }
+
 }

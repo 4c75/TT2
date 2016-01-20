@@ -1,0 +1,45 @@
+﻿
+<script>
+    function initialize() {
+    //var canvas = document.getElementsById('');
+
+
+        //var myLatlng = new google.maps.LatLng(56.923941, 24.137227);
+        var mapCanvas = document.getElementById(@Model.id);
+        var mapOptions = {
+            center: new google.maps.LatLng(56.923941, 24.137227),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        //var i =  ;
+        @foreach(TT2_Gala_darbs.Models.Cords c in Model.cord){
+        <text>
+
+        var myLatlng = new google.maps.LatLng( @c.x , @c.y );
+        // Place a draggable marker on the map
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable: true,
+            title: "Drag me!"
+        });
+        </text>
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+@model TT2_Gala_darbs.Models.StoryModel
+<h2> @Model.title </h2>
+<p>
+    @Model.text <br>
+    Likes: @Model.likes.ToString()
+</p>
+<p>
+    @foreach (TT2_Gala_darbs.Models.Cords c in Model.cord)
+    {
+        <span>@c.x.ToString()</span> @c.y.ToString();
+    }
+</p>
+<div class="map" id="@Model.id" style="height: 400px; width: 400px;"></div>

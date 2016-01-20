@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using TT2_Gala_darbs.Models;
 
 namespace TT2_Gala_darbs.Controllers
 {
@@ -11,10 +12,12 @@ namespace TT2_Gala_darbs.Controllers
     {
         public ActionResult Index()
         {
-            string result;
-            if (User.Identity.IsAuthenticated) result = "U R Logged in";
-            else result = "U R Not Logged in";
-            return View("Index", (object)result);
+            database getData = new database();
+            string currentUser = User.Identity.Name;
+            List<StoryModel> result = getData.getStory(currentUser);
+            
+            if (User.Identity.IsAuthenticated) return View("Index", result);
+            else return View("NotLoggedIn");
         }
 
         public ActionResult About()
