@@ -57,7 +57,7 @@ namespace TT2_Gala_darbs.Models
                         Cords b = new Cords();
                         b.id = reader.GetInt32(0);
                         b.x = reader.GetDecimal(1);
-                        b.y = reader.GetDecimal(2);
+                        b.y = reader.GetDecimal(2); 
                         result.Add(b);
                     }
                 }
