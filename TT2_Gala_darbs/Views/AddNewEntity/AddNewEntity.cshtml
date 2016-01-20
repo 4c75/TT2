@@ -15,6 +15,15 @@
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
+
+        function AddMark() {
+            var marker=new google.maps.Marker({
+                position:myCenter,
+                draggable: true
+            });
+            alert("clicked!");
+            marker.setMap(map);
+        }
     </script>
 <h2>Add new Story</h2>
 
@@ -26,3 +35,4 @@
     <div class="map" id="maps" style="height: 400px; width: 400px;"></div>
     <input type="submit" value="Add new story">
 </form>
+<button name="MarkerAdd" onclick="AddMark"> add marker </button>
