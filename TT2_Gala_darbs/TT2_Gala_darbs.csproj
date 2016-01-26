@@ -221,6 +221,7 @@
     <Content Include="Views\Home\NotLoggedIn.cshtml" />
     <Content Include="Views\Shared\EntityContent.cshtml" />
     <Content Include="Views\AddNewEntity\AddNewEntity.cshtml" />
+    <Content Include="Views\Shared\Sandbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

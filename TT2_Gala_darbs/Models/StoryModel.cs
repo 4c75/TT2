@@ -14,7 +14,7 @@ namespace TT2_Gala_darbs.Models
     {
         string ConStr = ConfigurationManager.ConnectionStrings["TT2data"].ConnectionString;
 
-        public ApplicationUser currentUser { get; set; }
+        public string currentUser { get; set; }
         public string title { get; set; }
         public string text { get; set; }
         public int likes { get; set; }
@@ -24,9 +24,10 @@ namespace TT2_Gala_darbs.Models
 
         public StoryModel()
         {
-            currentUser = new ApplicationUser();
-
+            this.cord = new List<Cords>();
+            //currentUser = new ApplicationUser();
         }
+            
     }
 
 
