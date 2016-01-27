@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     @if(User.Identity.IsAuthenticated) { <li>@Html.ActionLink("Add Story", "Index", "AddNewEntity")</li> }
+                    <li> <form action="/Home/showData"><input type="text" name="user"/><input type="submit" value="search" /> </form> </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

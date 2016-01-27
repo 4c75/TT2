@@ -76,7 +76,7 @@ namespace TT2_Gala_darbs.Models
 
                 data.Open();
                 string UserName = user;
-                SqlCommand sel = new SqlCommand("select id, title, story, likes from Stories where  username = '" + UserName + "'", data);
+                SqlCommand sel = new SqlCommand("select id, title, story, likes from Stories where  username = '" + UserName + "' order by id desc", data);
                 using (SqlDataReader reader = sel.ExecuteReader())
                 {
                     while (reader.Read())

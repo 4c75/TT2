@@ -34,11 +34,11 @@
 <h2> @Model.title </h2>
 <p>
     @Model.text <br>
-    Likes: @Model.likes.ToString()
 </p>
 <p>
     @foreach (TT2_Gala_darbs.Models.Cords c in Model.cord)
     {
+        <span>Visited coordinates: </span>
         <span>@c.x.ToString()</span> @c.y.ToString();
     }
 </p>

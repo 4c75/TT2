@@ -20,6 +20,15 @@ namespace TT2_Gala_darbs.Controllers
             else return View("NotLoggedIn");
         }
 
+        public ActionResult showData()
+        {
+            string user = Request["user"];
+            database getData = new database();
+            List<StoryModel> result = getData.getStory(user);
+            if (User.Identity.IsAuthenticated) return View("Index", result);
+            else return View("NotLoggedIn");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
